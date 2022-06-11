@@ -1,0 +1,58 @@
+:root{
+    --color-background: hsl(216, 57%, 11%);
+    --color-blue: hsl(191, 67%, 59%);
+    --color-blue-blured: hsla(191, 67%, 59%, 0.27);
+    --color-red: hsl(339, 100%, 59%);
+    --color-red-blured: hsla(339, 100%, 59%, 0.27);
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    background-color: var(--color-background);
+
+    display: flex;
+    justify-content: space-between;
+    overflow: hidden;
+}
+
+i {
+    width: 1rem;
+    height: 1rem;
+    border-radius: 100%;
+
+    animation: animation 6s linear infinite;
+    animation-delay: calc(var(--i) * 300ms);
+
+    position: relative;
+    transform: translateY(100vh) scale(0);
+}
+
+i:nth-of-type(n) {
+    background-color: var(--color-blue);
+    box-shadow: 0 0 0 10px var(--color-blue-blured),
+                0 0 50px var(--color-blue),
+                0 0 100px var(--color-blue);
+}
+
+i:nth-of-type(2n) {
+    background-color: var(--color-red);
+    box-shadow: 0 0 0 10px var(--color-red-blured),
+    0 0 50px var(--color-red),
+    0 0 100px var(--color-red);
+}
+
+@keyframes animation {
+    /*from {*/
+    /*    transform: translateY(100vh) scale(0);*/
+    /*}*/
+
+    to {
+        transform: translateY(-10vh) scale(1);
+    }
+}
